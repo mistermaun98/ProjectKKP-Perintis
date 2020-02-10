@@ -407,7 +407,7 @@
                   <StringArray count="3">
                     <StringItem index="0" value="------ Status Peminjaman ------ "/>
                     <StringItem index="1" value="Perorangan"/>
-                    <StringItem index="2" value="Kelompok"/>
+                    <StringItem index="2" value="Kelas"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -616,8 +616,8 @@
                 <Container class="javax.swing.JPanel" name="jPanel6">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Data Peminjaman Kelompok">
-                        <Property name="tabTitle" type="java.lang.String" value="Data Peminjaman Kelompok"/>
+                      <JTabbedPaneConstraints tabName="Data Peminjaman Kelas">
+                        <Property name="tabTitle" type="java.lang.String" value="Data Peminjaman Kelas"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>

@@ -41,10 +41,10 @@ public class peminjaman extends javax.swing.JFrame {
         }
     }
     
-    protected void tampiltabelKelompok() {
+    protected void tampiltabelKelas() {
         try {
             PreparedStatement ps = conn.prepareStatement("select kdpinjam,nama,kls,jdbuku,stat from peminjaman "
-                    + "where stat = 'Kelompok'");
+                    + "where stat = 'Kelas'");
             ResultSet rs = ps.executeQuery();
             tblPinjamKelompok.setModel(DbUtils.resultSetToTableModel(rs));
         } catch (Exception e) {
@@ -55,7 +55,7 @@ public class peminjaman extends javax.swing.JFrame {
     public peminjaman() {
         initComponents();
         tampiltabelPersonal();
-        tampiltabelKelompok();
+        tampiltabelKelas();
         tglpinjam.setDate(curdate);
     }
 
@@ -216,7 +216,7 @@ public class peminjaman extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "------ Status Peminjaman ------ ", "Perorangan", "Kelompok" }));
+        status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "------ Status Peminjaman ------ ", "Perorangan", "Kelas" }));
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Informasi buku yang dipinjam", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
@@ -396,7 +396,7 @@ public class peminjaman extends javax.swing.JFrame {
                 .addGap(131, 131, 131))
         );
 
-        jTabbedPane1.addTab("Data Peminjaman Kelompok", jPanel6);
+        jTabbedPane1.addTab("Data Peminjaman Kelas", jPanel6);
 
         saveBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         saveBtn.setText("Simpan Data");
@@ -575,7 +575,7 @@ public class peminjaman extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Data berhasil diinput !");
                 resetForm();
                 tampiltabelPersonal();
-                tampiltabelKelompok();
+                tampiltabelKelas();
             } catch (Exception e) {
                 Logger.getLogger(peminjaman.class.getName()).log(Level.SEVERE, null, e);
                 JOptionPane.showMessageDialog(null, e);
@@ -611,7 +611,7 @@ public class peminjaman extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Data Berhasil Diubah !");
                     resetForm();
                     tampiltabelPersonal();
-                    tampiltabelKelompok();
+                    tampiltabelKelas();
                 } catch (SQLException e) {
                     e.printStackTrace();
                     JOptionPane.showMessageDialog(null, e);
@@ -624,7 +624,7 @@ public class peminjaman extends javax.swing.JFrame {
         searchbarPersonal.setText("");
         searchbarKelompok.setText("");
         tampiltabelPersonal();
-        tampiltabelKelompok();
+        tampiltabelKelas();
         kdpinjam.requestFocus();
     }//GEN-LAST:event_resetBtnActionPerformed
 
@@ -638,7 +638,7 @@ public class peminjaman extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Data Berhasil Dihapus !");
                 resetForm();
                 tampiltabelPersonal();
-                tampiltabelKelompok();
+                tampiltabelKelas();
             } catch (SQLException e) {
                 JOptionPane.showMessageDialog(null, e);
             }
@@ -676,7 +676,7 @@ public class peminjaman extends javax.swing.JFrame {
                         + "where kdpinjam like '%"+searchbarKelompok.getText()+"%' "
                         + "or nama like '%"+searchbarKelompok.getText()+"%' "
                         + "or kls like '%"+searchbarKelompok.getText()+"%' "
-                        + "having stat='Kelompok'";
+                        + "having stat='Kelas'";
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ResultSet rs = ps.executeQuery();
                 tblPinjamKelompok.setModel(DbUtils.resultSetToTableModel(rs));
@@ -690,7 +690,7 @@ public class peminjaman extends javax.swing.JFrame {
 
     private void searchbarKelompokMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchbarKelompokMouseClicked
         searchbarKelompok.setText("");
-        tampiltabelKelompok();
+        tampiltabelKelas();
     }//GEN-LAST:event_searchbarKelompokMouseClicked
 
     private void gotoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotoMenuActionPerformed
